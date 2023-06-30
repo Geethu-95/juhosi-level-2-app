@@ -60,7 +60,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-   await fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/index/api/create`, requestOptions).then(
+   await fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/api/api/create`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully submitted data!");
@@ -95,7 +95,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-    fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/index/export-csv`, requestOptions).then(
+    fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/api/export-csv`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully downloaded order data");
