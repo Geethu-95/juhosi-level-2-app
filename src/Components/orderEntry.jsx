@@ -60,7 +60,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-   await fetch(`https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/create`, requestOptions).then(
+   await fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/index/api/create`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully submitted data!");

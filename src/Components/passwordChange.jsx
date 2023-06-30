@@ -56,7 +56,7 @@ export default function PasswordChange() {
     };
     // console.log(values.phone)
 
-   await fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getPhone", requestOptions)
+   await fetch("https://courageous-boba-89d4e4.netlify.app/.netlify/functions/index/api/getPhone", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         if (data) {
@@ -69,7 +69,7 @@ export default function PasswordChange() {
     // console.log(apiResp);
 
     if (apiResp.phone_number === values.phone) {
-    await  fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/update", requestOptions)
+    await  fetch("https://courageous-boba-89d4e4.netlify.app/.netlify/functions/index/api/update", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           if (data) {

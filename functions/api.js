@@ -22,25 +22,25 @@ con.connect(function (err) {
   console.log("Connected!");
 });
 
-app.use(cors());
+// app.use(cors());
 // app.options('*', cors())
 // app.use(cors({origin: '*',
 //   methods: ['POST']
 // }));
 // app.use(express.json())
-const corsOptions = {
-  // origin: "https://juhosi-level2-frontend.web.app"
-  origin: "https://master--deluxe-daffodil-504ed3.netlify.app",
-  optionsSuccessStatus: 200,// For legacy browser support
-  methods: "POST, GET"
-}
+// const corsOptions = {
+//   // origin: "https://juhosi-level2-frontend.web.app"
+//   origin: "https://master--deluxe-daffodil-504ed3.netlify.app",
+//   optionsSuccessStatus: 200,// For legacy browser support
+//   methods: "POST, GET"
+// }
 
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
 
-router.get('/', cors(corsOptions), (req, res) => {
+router.get('/', (req, res) => {
   res.json({
     hello: "hi!"
   });
@@ -48,7 +48,7 @@ router.get('/', cors(corsOptions), (req, res) => {
 
 
 // Route to get one post
-router.post("/api/getFromId&Password", cors(corsOptions), (req, res) => {
+router.post("/api/getFromId&Password",(req, res) => {
 
   const id = req.body.id;
   const password = req.body.password
@@ -66,7 +66,7 @@ router.post("/api/getFromId&Password", cors(corsOptions), (req, res) => {
 });
 
 // Route for creating the post
-router.post('/api/create', cors(corsOptions), (req, res) => {
+router.post('/api/create',  (req, res) => {
   // const item = req.body;
 
   const orderDate = req.body.orderDate;
@@ -90,7 +90,7 @@ router.post('/api/create', cors(corsOptions), (req, res) => {
   );
 })
 
-router.post('/api/getPhone', cors(corsOptions), (req, res) => {
+router.post('/api/getPhone',  (req, res) => {
   const { phone, npassword, cnpassword } = req.body;
   console.log(phone)
   con.query("SELECT * FROM User WHERE phone_number = ?", phone, (err, result) => {
@@ -104,7 +104,7 @@ router.post('/api/getPhone', cors(corsOptions), (req, res) => {
 }
 )
 
-router.post('/api/update', cors(corsOptions), (req, res) => {
+router.post('/api/update',  (req, res) => {
   // const item = req.body;
 
   const { phone, npassword, cnpassword } = req.body;
@@ -123,7 +123,7 @@ router.post('/api/update', cors(corsOptions), (req, res) => {
   );
 })
 
-router.post('/export-csv', cors(corsOptions), function (req, res) {
+router.post('/export-csv',  function (req, res) {
 
   const { id } = req.body;
 
@@ -151,9 +151,9 @@ router.post('/export-csv', cors(corsOptions), function (req, res) {
   });
 });
 
-app.listen(4000, () => {
-  console.log(`Server is running on 4000`)
-})
+// app.listen(4000, () => {
+//   console.log(`Server is running on 4000`)
+// })
 
 module.exports = app;
 exports.module = router;
