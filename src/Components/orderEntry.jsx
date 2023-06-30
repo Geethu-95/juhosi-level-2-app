@@ -95,7 +95,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-    fetch(`https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/export-csv`, requestOptions).then(
+    fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/index/export-csv`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully downloaded order data");
