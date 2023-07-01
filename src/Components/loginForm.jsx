@@ -40,16 +40,16 @@ export default function LoginForm() {
     formBody = formBody.join("&");
     // console.log(formBody);
 
-    const requestOptions = {
-      method: "POST",
-      // mode: "cors",
-      headers: {
-        // "Content-Type": "application/x-www-form-urlencoded",
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: formBody,
-    };
+    // const requestOptions = {
+    //   method: "POST",
+    //   // mode: "cors",
+    //   headers: {
+    //     // "Content-Type": "application/x-www-form-urlencoded",
+    //     "Content-Type": "application/x-www-form-urlencoded",
+    //     "Access-Control-Allow-Origin": "*",
+    //   },
+    //   body: formBody,
+    // };
 
     // await fetch(
     //   "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",
