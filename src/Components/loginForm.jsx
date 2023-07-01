@@ -47,7 +47,7 @@ export default function LoginForm() {
     };
 
   await  fetch(
-      "https://courageous-boba-89d4e4.netlify.app/.netlify/functions/api/api/getFromId&Password",
+      "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromId&Password",
       requestOptions
     )
       // .then((response) => console.log(response))
