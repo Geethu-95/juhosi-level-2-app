@@ -60,7 +60,7 @@ export default function LoginForm() {
       'content-type': 'application/x-www-form-urlencoded'
   }}
       )
-      .then((response) => response.json())
+      // .then((response) => response.json())
       .then((data) => {
         if (data) {
           console.log("data ",data);
