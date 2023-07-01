@@ -26,11 +26,15 @@ export default function LoginForm() {
 
   const authenticationMech = async (values) => {
     // setFormValues(values)
+const postValues = {
+  id: values.id,
+    password: values.password,
 
+}
     var formBody = [];
-    for (var property in values) {
+    for (var property in postValues) {
       var encodedKey = encodeURIComponent(property);
-      var encodedValue = encodeURIComponent(values[property]);
+      var encodedValue = encodeURIComponent(postValues[property]);
       formBody.push(encodedKey + "=" + encodedValue);
     }
     formBody = formBody.join("&");
@@ -57,10 +61,10 @@ export default function LoginForm() {
           navigate("/orderEntry", {
             state: { owner: data[0].name, id: data[0].id },
           });
-        } else {return alert("Invalid credentials!");}
+        } else alert("Invalid credentials!")
       })
       // .catch((error) => {
-      //   console.error(error)
+      //   // console.error(error)
       // })
   };
 
