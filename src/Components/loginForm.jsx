@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 // import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -45,15 +46,20 @@ export default function LoginForm() {
       headers: {
         // "Content-Type": "application/x-www-form-urlencoded",
         "Content-Type": "application/x-www-form-urlencoded",
-        // "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*",
       },
       body: formBody,
     };
 
-    await fetch(
-      "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",
-      requestOptions
-    )
+    // await fetch(
+    //   "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",
+    //   requestOptions
+    // )
+    await axios.post("https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",formBody,
+    {headers: {
+      'content-type': 'application/x-www-form-urlencoded'
+  }}
+      )
       .then((response) => response.json())
       .then((data) => {
         if (data) {
