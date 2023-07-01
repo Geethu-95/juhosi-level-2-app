@@ -3,5 +3,5 @@
 [functions]
   directory = "functions"
 [[redirects]]
-  from = "/api/*"
-  to = "https://courageous-boba.netlify.app/.netlify/functions/api"
+  from = "/*"
+  to = "/.netlify/functions/api/*"
