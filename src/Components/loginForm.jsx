@@ -42,7 +42,7 @@ const postValues = {
 
     const requestOptions = {
       method: "POST",
-      mode: "cors",
+      // mode: "cors",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         "Access-Control-Allow-Origin": "*",
