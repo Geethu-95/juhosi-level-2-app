@@ -10,6 +10,7 @@ const router = express.Router()
 const app = express()
 app.use('/.netlify/functions/api',router)
 
+
 var con = mysql.createConnection({
   host: "db4free.net",
   user: "juhosi",
@@ -22,7 +23,7 @@ con.connect(function (err) {
   console.log("Connected!");
 });
 
-// app.use(cors());
+app.use(cors());
 // app.options('*', cors())
 // app.use(cors({origin: '*',
 //   methods: ['POST']
