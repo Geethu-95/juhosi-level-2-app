@@ -26,11 +26,10 @@ export default function LoginForm() {
 
   const authenticationMech = async (values) => {
     // setFormValues(values)
-const postValues = {
-  id: values.id,
-    password: values.password,
-
-}
+    const postValues = {
+      id: values.id,
+      password: values.password,
+    };
     var formBody = [];
     for (var property in postValues) {
       var encodedKey = encodeURIComponent(property);
@@ -45,13 +44,13 @@ const postValues = {
       // mode: "cors",
       headers: {
         // "Content-Type": "application/x-www-form-urlencoded",
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
         // "Access-Control-Allow-Origin": "*",
       },
-      body: postValues,
+      body: formBody,
     };
 
-  await  fetch(
+    await fetch(
       "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromId&Password",
       requestOptions
     )
@@ -62,11 +61,11 @@ const postValues = {
           navigate("/orderEntry", {
             state: { owner: data[0].name, id: data[0].id },
           });
-        } else alert("Invalid credentials!")
-      })
-      // .catch((error) => {
-      //   // console.error(error)
-      // })
+        } else alert("Invalid credentials!");
+      });
+    // .catch((error) => {
+    //   // console.error(error)
+    // })
   };
 
   const changePassword = () => {
