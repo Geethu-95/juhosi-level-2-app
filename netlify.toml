@@ -4,4 +4,4 @@
   directory = "functions"
 [[redirects]]
   from = "/api/*"
-  to = "https://courageous-boba.netlify.app"
+  to = "https://courageous-boba.netlify.app/.netlify/functions/api"
