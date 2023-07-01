@@ -49,7 +49,7 @@ router.get('/', (req, res) => {
 
 
 // Route to get one post
-router.post("/api/getFromId&Password",(req, res) => {
+router.post("/api/getFromIdAndPassword",(req, res) => {
 
   const id = req.body.id;
   const password = req.body.password
