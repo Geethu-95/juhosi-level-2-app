@@ -50,7 +50,7 @@ export default function LoginForm() {
       "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromId&Password",
       requestOptions
     )
-      // .then((response) => console.log(response))
+      .then((response) => console.log(response))
       .then((data) => {
         if (data) {
           console.log(data);
