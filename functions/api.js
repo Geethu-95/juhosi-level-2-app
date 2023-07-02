@@ -150,7 +150,8 @@ router.post('/api/export-csv',  function (req, res) {
 
     fs.writeFileSync('orderItems.csv', csv)
 
-    res.status(200).end(csv);
+    // res.status(200).end(csv);
+    res.download(csv);
     // -> Check  file in root project folder
   });
 });
