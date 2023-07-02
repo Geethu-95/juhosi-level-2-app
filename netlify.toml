@@ -9,7 +9,8 @@
   status = 200
 
 [[headers]]
-  for = "/api/export-csv"
+ /orderItems.csv
   [headers.values]
-  Access-Control-Expose-Headers = Content-Disposition
-  Content-Type = text/csv
+   Content-Type = text/csv
+   content-disposition: attachment; filename="orderItems.csv"
+ 
