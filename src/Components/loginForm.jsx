@@ -55,12 +55,12 @@ export default function LoginForm() {
     //   "https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",
     //   requestOptions
     // )
-    await axios.post("https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",formBody,
+    await axios.post("https://courageous-boba.netlify.app/.netlify/functions/api/api/getFromIdAndPassword",postValues,
     {headers: {
-      'content-type': 'application/x-www-form-urlencoded'
+      'content-type': 'application/json'
   }}
       )
-      // .then((response) => response.json())
+      .then((response) => response.json())
       .then((data) => {
         if (data) {
           console.log("data ",data);

@@ -28,7 +28,7 @@ app.use(cors());
 // app.use(cors({origin: '*',
 //   methods: ['POST']
 // }));
-// app.use(express.json())
+app.use(express.json())
 // const corsOptions = {
 //   // origin: "https://juhosi-level2-frontend.web.app"
 //   origin: "https://master--deluxe-daffodil-504ed3.netlify.app",
@@ -36,9 +36,9 @@ app.use(cors());
 //   methods: "POST, GET"
 // }
 
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
+// app.use(bodyParser.urlencoded({
+//   extended: true
+// }));
 
 
 router.get('/', (req, res) => {
