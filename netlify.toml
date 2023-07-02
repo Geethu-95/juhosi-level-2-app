@@ -2,3 +2,21 @@
   functions = "functions"
 [functions]
   directory = "functions"
+[[redirects]]
+  from = "/home"
+  to = "https://courageous-boba.netlify.app/.netlify/functions/api/*"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+  from = "/orderEntry"
+  to = "https://courageous-boba.netlify.app/.netlify/functions/api/*"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+ from = "/changePassword"
+  to = "https://courageous-boba.netlify.app/.netlify/functions/api/*"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
