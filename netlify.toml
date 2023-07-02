@@ -8,3 +8,8 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
+[[headers]]
+  for = "/api/export-csv"
+  [headers.values]
+  Content-Disposition = attachment; filename="orderItems.csv"
+  Content-Type = text/csv
