@@ -70,7 +70,7 @@ export default function OrderEntry() {
 
   const renderError = (message) => <p className="help is-danger">{message}</p>;
 
-  const exportToCsv = () => {
+  const exportToCsv = async () => {
 
     const postValues = {
       id: id,
@@ -87,7 +87,7 @@ export default function OrderEntry() {
 
     const requestOptions = {
       method: "POST",
-      // mode: "cors",
+      mode: "cors",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         "Access-Control-Allow-Origin": "*",
@@ -95,7 +95,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-    fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/api/api/export-csv`, requestOptions).then(
+    await fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/api/api/export-csv`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully downloaded order data");
