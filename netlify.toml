@@ -8,9 +8,3 @@
   to = "/.netlify/functions/:splat"
   status = 200
 
-  [[headers]]
-  for = "/*"
-  [headers.values]
-     content-type = '''
-     application/json,
-     application/x-www-form-urlencoded'''
