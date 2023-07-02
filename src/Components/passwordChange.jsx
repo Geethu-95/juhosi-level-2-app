@@ -57,12 +57,12 @@ export default function PasswordChange() {
     // console.log(values.phone)
 
    await fetch("https://courageous-boba.netlify.app/.netlify/functions/api/api/getPhone", requestOptions)
-      .then((response) => response.json())
+      // .then((response) => response.json())
       .then((data) => {
         if (data) {
-          setApiResp(data[0]);
+          setApiResp(data.data[0]);
           // console.log("apiresp ", data);
-        } else return alert("Incorrect phone number!");
+        } else  alert("Incorrect phone number!");
       })
       .catch((error) => console.error(error));
 
