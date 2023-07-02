@@ -127,7 +127,7 @@ router.post('/api/update',  (req, res) => {
   );
 })
 
-router.post('/export-csv',  function (req, res) {
+router.post('/api/export-csv',  function (req, res) {
 
   const { id } = req.body;
 
