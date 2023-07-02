@@ -8,7 +8,8 @@ const serverless = require('serverless-http')
 const router = express.Router()
 
 const app = express()
-app.use('/.netlify/functions/api',router)
+app.use('/.netlify/functions',router)
+// app.use('/api',router)
 
 
 var con = mysql.createConnection({
@@ -36,9 +37,9 @@ app.use(express.json())
 //   methods: "POST, GET"
 // }
 
-// app.use(bodyParser.urlencoded({
-//   extended: true
-// }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 
 router.get('/', (req, res) => {
