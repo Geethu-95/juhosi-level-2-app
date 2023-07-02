@@ -133,7 +133,7 @@ router.post('/api/export-csv',  function (req, res) {
 
   con.query("SELECT * FROM Orderitem WHERE user_id = ?", id, function (err, items, fields) {
     if (err) throw err;
-    console.log("users:");
+    // console.log("users:");
 
     const jsonItems = JSON.parse(JSON.stringify(items));
     // console.log(jsonItems);
@@ -163,5 +163,5 @@ app.listen(4000, () => {
 app.use('/.netlify/functions/api',router)
 
 module.exports = app;
-exports.module = router;
+module.exports = router;
 module.exports.handler = serverless(app)
