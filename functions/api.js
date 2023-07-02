@@ -5,11 +5,12 @@ const cors = require('cors')
 var Json2csvParser = require('json2csv').Parser;
 const fs = require('fs')
 const serverless = require('serverless-http')
-const router = express.Router()
+
 
 const app = express()
-app.use('/.netlify/functions/api',router)
-// app.use('/api',router)
+const router = express.Router()
+// app.use('/.netlify/functions/api',router)
+
 
 
 var con = mysql.createConnection({
@@ -62,6 +63,7 @@ router.post("/api/getFromIdAndPassword",(req, res) => {
 
       // res.send("Success!")
       // res.set('Access-Control-Allow-Origin', '*');
+      console.log(result)
       res.send(result)
   }
   );
@@ -153,9 +155,11 @@ router.post('/export-csv',  function (req, res) {
   });
 });
 
-// app.listen(4000, () => {
-//   console.log(`Server is running on 4000`)
-// })
+app.listen(4000, () => {
+  console.log(`Server is running on 4000`)
+})
+
+app.use('/.netlify/functions/api',router)
 
 module.exports = app;
 exports.module = router;
