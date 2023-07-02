@@ -9,8 +9,10 @@
   status = 200
 
 [[headers]]
- /orderItems.csv
+ from ="/api/export-csv"
   [headers.values]
    Content-Type = text/csv
-   content-disposition: attachment; filename="orderItems.csv"
+   content-disposition = '''
+     filename=orderItems.csv
+      attachment'''
  
