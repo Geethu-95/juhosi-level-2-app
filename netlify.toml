@@ -13,5 +13,5 @@
   [headers.values]
   Content-Disposition = '''
   attachment
-  filename="orderItems.csv"'''
+  filename=orderItems.csv'''
   Content-Type = text/csv
