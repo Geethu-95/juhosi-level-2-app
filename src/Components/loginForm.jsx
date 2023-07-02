@@ -60,12 +60,12 @@ export default function LoginForm() {
       'content-type': 'application/json'
   }}
       )
-      // .then((response) => response.json())
+      .then((response) => response.json())
       .then((data) => {
         if (data) {
           console.log("data ",data);
           navigate("/orderEntry", {
-            state: { owner: data[data].data[0].name, id: data[data].data[0].id },
+            state: { owner: data[0].name, id: data[0].id },
           });
         } else alert("Invalid credentials!");
       });
