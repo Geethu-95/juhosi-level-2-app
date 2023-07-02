@@ -1,3 +1,7 @@
-/* /index.html 200
+/home /index.html 200
 
-/*  https://courageous-boba.netlify.app/.netlify/functions/api:splat  200
+/orderEntry /index.html 200
+
+/changePassword /index.html 200
+
+/api/*  https://courageous-boba.netlify.app/.netlify/functions/api  200
