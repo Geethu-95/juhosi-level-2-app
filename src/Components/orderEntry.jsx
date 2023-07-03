@@ -95,7 +95,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-    await fetch(`https://courageous-boba-89d4e4.netlify.app/.netlify/functions/api/api/export-csv`, requestOptions).then(
+    await fetch(`https://courageous-boba.netlify.app/.netlify/functions/api/api/export-csv`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully downloaded order data");
