@@ -81,6 +81,31 @@ export default function LoginForm() {
     //  alert("Please enter Id")
   };
 
+  const MySpecialField = ({ field }) => {
+    return <input {...field} 
+    style={{
+    width: '25%',
+  padding: '12px 20px',
+  margin:'8px 0',
+  display: 'inline-block',
+  border:'1px solid #ccc',
+  borderRadius: '4px'
+    }}/>
+  };
+
+  // const MyButton = ({ button }) => {
+  //   return <input {...button} 
+  //   style={{
+  //     backgroundColor: "blue",
+  //     border: "none",
+  //     color: "white",
+  //     padding: "15px 32px",
+  //     textAlign: "center",
+  //     textDecoration: "none",
+  //     display: "inline-block",
+  //     fontSize: "16px
+  //   }}/>
+  // };
   return (
     <>
       <div style={{ marginLeft: "40%" }}>
@@ -93,30 +118,32 @@ export default function LoginForm() {
             return (
               <Form>
                 <div className="field">
-                  {/* <label className="label" htmlFor="id">
+                  <label className="label" htmlFor="id">
                     ID
-                  </label> */}
+                  </label>
                   <div className="control">
                     <Field
                       name="id"
                       type="text"
-                      className="input"
-                      placeholder="Enter Id"
+                      // className="input"
+                      
+                      component={MySpecialField}
                     />
                     <ErrorMessage name="id" render={renderError} />
                   </div>
                 </div>
 
                 <div className="field">
-                  {/* <label className="label" htmlFor="name">
+                  <label className="label" htmlFor="name">
                     Password
-                  </label> */}
+                  </label>
                   <div className="control">
                     <Field
                       name="password"
                       type="text"
-                      className="input"
+                      // className="input"
                       placeholder="Enter password"
+                      component={MySpecialField}
                     />
                     <ErrorMessage name="password" render={renderError} />
                   </div>
